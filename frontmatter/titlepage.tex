@@ -1,0 +1,41 @@
+% Title page using the document metadata defined in main.tex.
+
+% Use a one-sided type area here so the title page has equal left and right margins.
+\KOMAoptions{twoside=false}
+\recalctypearea
+
+\begin{titlepage}
+	\thispagestyle{empty}
+	\makeatletter
+	\centering
+
+	\vspace*{2.1cm}
+	{\Large\bfseries
+		\begin{minipage}{0.88\textwidth}
+			\centering
+			A Sample Thesis Template for LaTeX
+		\end{minipage}\par}
+
+  \vfill
+
+	{\normalsize by\par}
+	\vspace{0.15cm}
+	{\normalsize Jane Doe \par}
+
+	\vfill
+
+	{\normalsize A Thesis \\ Submitted to the Department of XYZ \\ Heidelberg University \par}
+
+	\vspace{0.5cm}
+
+	{\normalsize In Partial Fulfillment \\ of the Requirements for the Degree \\ Master of Science\par}
+  \vspace{0.5cm}
+	{\normalsize June 2026\par}
+
+	\makeatother
+\end{titlepage}
+
+\KOMAoptions{twoside=true}
+\recalctypearea
+
+\cleardoublepage

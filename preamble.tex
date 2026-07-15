@@ -1,0 +1,149 @@
+% language
+% Template default is English, with German available where needed.
+\usepackage[main=english, ngerman]{babel}
+
+% fonts
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+%\setmainfont{Libertinus Serif}
+%\setsansfont{Computer Modern}
+\setmonofont{Ubuntu Mono}[Scale=0.8]
+
+\usepackage{setspace}
+\setstretch{1.25}
+
+% Abstract heading per language
+\usepackage{abstract}
+% \addto\captionsenglish{\renewcommand{\abstractname}{Abstract}}
+% \addto\captionsngerman{\renewcommand{\abstractname}{Zusammenfassung}}
+
+% microtypography
+% https://en.wikipedia.org/wiki/microtypography
+\usepackage{microtype}
+
+
+\usepackage{enumitem}
+% \setlist{nosep} % Zeilenabstand verändern
+
+% math
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+
+%\usepackage[
+%  math-style = TeX,
+%  bold-style = ISO,
+%  nabla      = upright,
+%  partial    = upright,
+%]{unicode-math}
+%\setmathfont{Libertinus Math}
+
+% quotes
+\usepackage{csquotes}
+% example: \enquote{text}
+
+% tables
+\usepackage{tabularx}
+\usepackage{booktabs}
+
+\usepackage{threeparttable}
+\setkomafont{footnote}{\footnotesize}
+\deffootnote[1em]{1.25em}{1em}{\textsuperscript{\thefootnotemark}}
+
+% table notes are used to annotate particular entries in your tables
+% example: see 04_results.tex
+\renewcommand\TPTnoteSettings{%
+	\footnotesize
+	\setlength\leftmargin{1.0em}%   % labelwidth (0.9em) + labelsep (0.1em)
+	\setlength\labelwidth{0.9em}%   % label's width (e.g. the number)
+	\setlength\labelsep{0.1em}%     % distance between label and text
+	\setlength\itemindent{0pt}%     % for first line get no additional indent 
+	\setlength\itemsep{0pt}%
+	\setlength\listparindent{0pt}%  % Auch neue Absätze starten bündig
+	\setlength\parsep{0.5ex}%       % minimal distance for new paragraphs (if they exist)
+}
+
+% units
+\usepackage{siunitx}
+\sisetup{detect-all, input-decimal-markers = {.,,}}
+\addto\extrasenglish{\sisetup{locale = US}}
+\addto\extrasngerman{\sisetup{locale = DE}}
+
+% graphics
+\usepackage{graphicx}
+\usepackage{mwe}
+\usepackage{subcaption}
+
+\captionsetup{
+	textfont=sf,
+	labelfont={sf, bf}
+}
+\captionsetup[figure]{position=bottom}
+\captionsetup[table]{position=top}
+
+% KOMA-Script compatibility fixes (helps with float/list warnings)
+\usepackage{scrhack}
+
+% floats
+\usepackage{float}
+\usepackage{flafter}
+\usepackage[section]{placeins}
+\floatplacement{table}{!t}   % prefer top placement, but still allow LaTeX to resolve tight pages
+\floatplacement{figure}{!b}  % prefer bottom placement, but still allow LaTeX to resolve tight pages
+
+% header/footer
+\usepackage[automark]{scrlayer-scrpage}
+\clearpairofpagestyles
+\automark[section]{chapter}
+\ihead{\headmark}
+\ohead{\pagemark}
+\ifoot{}
+\cfoot{}
+\ofoot{}
+
+% color
+\usepackage{xcolor}
+\definecolor{uhdred}{RGB}{197, 13, 41}
+
+% bibliography
+\usepackage[
+  backend = biber,
+  style   = authoryear,
+  urldate = long,
+  dateabbrev = false
+]{biblatex}
+\addbibresource{bib/references.bib}
+%\setlength{\bibitemsep}{0.5\baselineskip}
+
+% hyperlinks
+\usepackage[
+  colorlinks=true,
+  allcolors=black,
+  hypertexnames=false,
+  plainpages=false,
+  pdfpagelabels,
+  bookmarksnumbered=true
+]{hyperref}
+
+\urlstyle{tt}
+
+% better PDF bookmarks (recommended with hyperref)
+\usepackage{bookmark}
+
+% optional but recommended
+\usepackage{cleveref}
+% example: \cref{fig:example} or \Cref{fig:example}
+
+% DEMO: 
+% \usepackage{blindtext}
+% example: \blindtext
+
+% optional
+\hypersetup{
+  pdftitle={A Sample Thesis Template for LaTeX},
+  pdfauthor={Christoph Otte},
+  pdfsubject={A Thesis Submitted to the Department of XYZ, Heidelberg University},
+  pdfkeywords={Thesis, LaTeX, Template, Example}
+}
